@@ -1,0 +1,13 @@
+- hosts: LAB
+  gather_facts: false
+  connection: local
+
+
+  tasks:
+  
+
+  - name: Cisco config
+    ios_config:
+      lines: 
+        - "ntp server 10.100.100.100"
+        
