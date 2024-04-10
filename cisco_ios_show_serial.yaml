@@ -1,0 +1,24 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+  serial: 1
+
+  tasks:
+  
+
+  - name: Cisco show ip route
+    ios_command:
+      commands:
+        - show ip route 
+    register: showiproute
+
+  - name: Cisco show run
+    ios_command:
+      commands:
+        - show run
+    register: showrun
+
+
+
+  - debug: var=showiproute.stdout_lines
+  - debug: var=showrun.stdout_lines

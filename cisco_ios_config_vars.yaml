@@ -1,0 +1,18 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+  vars_files: 
+    - ./vars/ios_vars.yaml 
+
+  tasks:
+  
+
+  - name: NTP config 
+    ios_config:
+      lines: 
+        - "ntp server {{ NTP_server }}"
+
+  - name: DNS config 
+    ios_config:
+      lines: 
+        - "{{ Conf_dns }}"

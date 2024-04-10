@@ -1,0 +1,33 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+  vars:
+    City: city123
+  vars_files: 
+    - ./vars/host_vars.yaml 
+
+  tasks:
+  
+
+  - debug: var=Site
+  - debug: var=Branch
+  - debug: var=City
+  - debug: var=Street
+
+
+
+  - debug:
+      msg: "{{ inventory_hostname }} Site = {{ Site }}"
+  
+
+  - name: Show Branch
+    debug: 
+      msg: "{{ inventory_hostname }} Branch = {{ Branch }}"
+
+  - name: Show City
+    debug: 
+      msg: "{{ inventory_hostname }} City = {{ City }}"
+
+  - name: Show Street
+    debug: 
+      msg: "{{ inventory_hostname }} Street = {{ Street }}"

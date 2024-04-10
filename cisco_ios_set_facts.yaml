@@ -1,0 +1,26 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+
+
+  tasks: 
+
+
+
+  - name: Show running config
+    ios_command:
+     commands:
+       - show running-config
+    register: showrun
+
+#  - debug: var=showrun.stdout_lines
+
+  - name: get ntp servers
+    set_fact: get_ntp_servers="{{showrun.stdout[0] | regex_findall('^ntp server.*', multiline=True) }}"
+
+  - name: get dns servers
+    set_fact: get_dns_servers="{{showrun.stdout[0] | regex_findall('^ip name-server.*', multiline=True) }}"
+
+
+  - debug: var=get_ntp_servers
+  - debug: var=get_dns_servers

@@ -11,3 +11,23 @@ R3 10.0.1.3
 R4 10.0.1.4
 R5 10.0.1.5
 R6 10.0.1.6
+
+
+Dok: 
+Ansible network CLI :
+https://docs.ansible.com/ansible/latest/network/user_guide/network_best_practices_2.5.html
+
+
+
+
+ansible-playbook cisco_ios_showv1.yaml -u cisco -k 
+
+ansible-playbook cisco_ios_showv1.yaml -u cisco -k --limit R1,R2,R3
+
+ansible-playbook cisco_ios_showv1.yaml -u cisco -k --limit R1,R2,R3 --extra-vars "Street=street000, Branch=branch000"
+
+ansible-playbook cisco_ios_set_facts.yaml -u cisco -k -i ./inventory/LAB1_network.yaml --limit R1,R2,R3
+
+ansible-playbook debug_vars.yaml -u cisco -k --limit R1,R2,R3 --extra-vars "Street=street000, Branch=branch000"
+
+

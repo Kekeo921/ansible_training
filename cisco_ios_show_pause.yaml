@@ -1,0 +1,27 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+  
+
+  - name: Cisco show ip route
+    ios_command:
+      commands:
+        - show ip route 
+    register: showiproute
+
+  - name: pause for 10 sec 
+    pause:
+      seconds: 10
+
+  - name: Cisco show run
+    ios_command:
+      commands:
+        - show run
+    register: showrun
+
+
+
+  - debug: var=showiproute.stdout_lines
+  - debug: var=showrun.stdout_lines

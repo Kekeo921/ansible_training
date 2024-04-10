@@ -1,18 +1,50 @@
-[G1]
+[Group1]
 R1 ansible_host=10.0.1.1
 
-[G2]
+[Group2]
 R2 ansible_host=10.0.1.2
 
-[G3]
+[Group3]
 R3 ansible_host=10.0.1.3
+
+[Group4]
+R4 ansible_host=10.0.1.4
+R5 ansible_host=10.0.1.5
+R6 ansible_host=10.0.1.6
+
 
 
 [LAB:children]
-G1
-G2
-G3
+Group1
+Group2
+Group3
+Group4
 
 
+[LAB:vars]
+ansible_network_os=ios
+
+
+
+
+[Group1:vars]
+Site=Site1
+Branch=Branch1
+NTP_server=10.0.0.1
+
+[Group2:vars]
+Site=Site2
+Branch=Branch2
+NTP_server=10.0.0.2
+
+[Group3:vars]
+Site=Site3
+Branch=Branch3
+NTP_server=10.0.0.3
+
+[Group4:vars]
+Site=Site4
+Branch=Branch4
+NTP_server=10.0.0.4
 
 

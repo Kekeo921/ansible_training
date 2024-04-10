@@ -1,0 +1,16 @@
+- hosts: LAB
+  gather_facts: false
+  connection: network_cli
+  vars_files: 
+    - ./vars/ios_vars.yaml 
+
+  tasks:
+  
+
+  - name: Cisco show cmd
+    ios_command:
+      commands:
+        - "{{ Show_route }}"
+    register: showroute
+
+  - debug: var=showroute.stdout_lines
