@@ -1,0 +1,20 @@
+- hosts: Lab_server
+  gather_facts: false
+  connection: local
+  vars_files: 
+    - ./vars/ios_vars_list.yaml 
+  vars:
+    list_1:
+      - item1
+      - item12
+      - item13 
+    list_2:
+      - item21
+      - item22
+      - item23
+
+  tasks: 
+
+  - debug: var=list_1
+  - debug: var=list_2
+  - debug: var=config_list

@@ -3,6 +3,7 @@
   connection: network_cli
   vars:
     City: city123
+    Branch: Branch999
   vars_files: 
     - ./vars/host_vars.yaml 
 

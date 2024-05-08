@@ -1,0 +1,50 @@
+- hosts: Lab_server
+  gather_facts: false
+  connection: local
+  vars_files: 
+    - ./vars/ios_vars_list.yaml 
+  vars:
+    list_1:
+      - item1
+      - item12
+      - item13 
+    list_2:
+      - item1
+      - item21
+      - item22
+      - item23
+      - wrong1
+      - wrong2
+
+
+  tasks:
+
+  - name: check list 1 
+    debug:
+      msg: "item = {{ item }} "
+    with_items: "{{ list_1 }}"
+
+
+  - name: check list 1 - loop
+    debug:
+      msg: "item = {{ item }} "
+    loop: "{{ list_1 }}"
+    
+
+  - name: check config list
+    debug:
+      msg: "item = {{ item }} "
+    with_items: "{{ config_list }}"
+    
+
+#  - name: check item in the lists 
+#    debug:
+#      msg: "item : {{ item }}"
+#    when: 'item in list_2'
+#    with_items: "{{ list_1 }}"
+#
+#  - name: check item in the lists 
+#    debug:
+#      msg: "item : {{ item }}"
+#    when: 'item not in list_2'
+#    with_items: "{{ list_1 }}"

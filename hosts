@@ -47,4 +47,5 @@ Site=Site4
 Branch=Branch4
 NTP_server=10.0.0.4
 
-
+[Lab_server]
+localhost
