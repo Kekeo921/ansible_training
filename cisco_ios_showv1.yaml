@@ -1,6 +1,6 @@
 - hosts: LAB
   gather_facts: false
-  connection: local
+  connection: network_cli
 
 
   tasks:

@@ -1,0 +1,8 @@
+Report
+
+{% for item in play_hosts %}
+Hostname = {{  hostvars[item]['ansible_net_hostname'] }}
+Version = {{  hostvars[item]['ansible_net_version'] }}
+Serial = {{  hostvars[item]['ansible_net_serialnum'] }}
+
+{% endfor %}

@@ -1,0 +1,6 @@
+- hosts: LAB
+  gather_facts: false
+
+
+  roles:
+    - cisco_check

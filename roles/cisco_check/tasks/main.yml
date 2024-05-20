@@ -1,0 +1,14 @@
+- name: load vars
+  include_vars: ios_config_vars.yaml
+
+- name: check cisco IOS local users 
+  include_tasks: cisco_show.yaml
+
+- name: check cisco IOS local users 
+  include_tasks: cisco_local_users.yaml
+
+- name: check cisco IOS ntp config
+  include_tasks: cisco_ntp.yaml
+
+- name: check cisco IOS dns config
+  include_tasks: cisco_dns.yaml  

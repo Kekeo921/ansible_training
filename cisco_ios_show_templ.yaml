@@ -1,0 +1,39 @@
+- hosts: LAB
+  gather_facts: false
+#  connection: network_cli
+
+  tasks:
+
+
+  - name: Gather facts (ios)
+    cisco.ios.ios_facts:
+
+  - name: view all ansible fact keys
+    debug:
+      var: ansible_facts.keys()
+
+  - name: view all ansible fact keys
+    debug:
+      var: ansible_facts.keys()
+
+
+  - name: facts from host
+    debug:
+      msg: "{{ ansible_net_hostname }},{{ ansible_net_version }},{{ ansible_net_serialnum }}"
+
+  - name: facts network_resources
+    debug:
+      msg: "{{ ansible_net_image }}"
+
+  - name: Write facts to csv
+    template:
+      src: ./templates/csv_template.j2
+      dest: ./reports/csv_file
+    run_once: true
+
+
+  - name: Write facts to text 
+    template:
+      src: ./templates/file_template.j2
+      dest: ./reports/text_file
+    run_once: true

@@ -1,0 +1,10 @@
+Report
+
+Hostname = R1
+Version = 15.5(2)T
+Serial = 67108880
+
+Hostname = R2
+Version = 15.5(2)T
+Serial = 67108896
+
