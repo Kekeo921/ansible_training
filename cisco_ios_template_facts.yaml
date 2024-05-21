@@ -34,6 +34,6 @@
 
   - name: Write facts to text 
     template:
-      src: ./templates/file_template.j2
-      dest: ./reports/text_file
+      src: ./templates/facts_template.j2
+      dest: ./reports/facts_file
     run_once: true

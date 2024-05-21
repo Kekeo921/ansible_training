@@ -1,0 +1,29 @@
+Users:
+{% for item in get_local_users %}
+  - {{ item }}
+{% endfor %}
+
+NTP Servers:
+{% for item in get_ntp_servers %}
+  - {{ item }}
+{% endfor %}
+
+DNS Servers:
+{% for item in get_dns_servers %}
+  - {{ item }}
+{% endfor %}
+
+SNMP view:
+{% for item in get_snmp_view %}
+  - {{ item }}
+{% endfor %}
+
+SNMP groups:
+{% for item in get_snmp_groups %}
+  - {{ item }}
+{% endfor %}
+
+SNMP users:
+{% for item in get_snmp_users %}
+  - {{ item }}
+{% endfor %}

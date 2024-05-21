@@ -1,0 +1,19 @@
+Users:
+  - cisco
+
+NTP Servers:
+  - ntp server 20.200.0.10
+  - ntp server 20.222.0.22
+
+DNS Servers:
+  - ip name-server 30.100.100.100
+  - ip name-server 30.200.200.200
+
+SNMP view:
+  - snmp-server view view_test iso included
+
+SNMP groups:
+  - snmp-server group group2 v3 priv read view_test 
+
+SNMP users:
+  - some_user
